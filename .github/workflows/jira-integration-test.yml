@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync alerts to Jira issues
-        uses: github/ghas-jira-integration@bidirectional_sync
+        uses: github/ghas-jira-integration@use-intermediate-variables
         with:
           jira_url: 'https://githubtraining.atlassian.net'
           jira_user: '${{ secrets.JIRA_USER }}'
           jira_token: '${{ secrets.JIRA_TOKEN }}'
           jira_project: 'SEB'
-          sync_direction: 'both'
+          sync_direction: 'gh2jira'
