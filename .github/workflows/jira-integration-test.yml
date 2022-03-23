@@ -14,6 +14,6 @@ jobs:
         with:
           jira_url: 'https://githubtraining.atlassian.net'
           jira_user: '${{ secrets.JIRA_USER }}'
-          jira_token: '${{ secrets.JIRA_TOKEN }}'
+          jira_token: '${{ secrets.JIRA_TOKEN }} '
           jira_project: 'SEB'
           sync_direction: 'gh2jira'
