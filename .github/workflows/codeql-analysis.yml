@@ -23,7 +23,7 @@ jobs:
 
     - run: |
        mkdir -p ~/.config/codeql
-       echo "database bundle --mode brutal" >> ~/.config/codeql/config
+       #echo "database bundle --mode brutal" >> ~/.config/codeql/config
 
     - uses: actions/setup-java@v1
       with:
