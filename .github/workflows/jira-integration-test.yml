@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync alerts to Jira issues
-        uses: github/ghas-jira-integration@only-assign-labels-on-creation-and-when-set
+        uses: github/ghas-jira-integration@bidirectional_sync
         with:
           jira_url: 'https://githubtraining.atlassian.net'
           jira_user: '${{ secrets.JIRA_USER }}'
