@@ -23,7 +23,6 @@ jobs:
 
     - run: |
        mkdir -p ~/.config/codeql
-       #echo "database bundle --mode brutal" >> ~/.config/codeql/config
 
     - uses: actions/setup-java@v1
       with:
@@ -36,14 +35,15 @@ jobs:
       if: matrix.language == 'java'
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
         queries: security-and-quality
+        packs: ghas-trials/${{ matrix.language }}-debug-queries
         debug: true
 
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+      uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      uses: github/codeql-action/analyze@v2
